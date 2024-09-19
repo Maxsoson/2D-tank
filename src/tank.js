@@ -1,7 +1,7 @@
 export default class Tank {
   direction = 0;
-  x = 100;
-  y = 100;
+  x = 64;
+  y = 192;
   animationFrame = 0;
   frames = [
     [0 * 16, 0 * 16, 16 ,16],
@@ -15,8 +15,7 @@ export default class Tank {
   ];
 
   get sprite() {
-    return this.frames[this.direction * 2 
-      + this.animationFrame]
+    return this.frames[this.direction * 2 + this.animationFrame]
   }
 
   update(activeKeys) {
