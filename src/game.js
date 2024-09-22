@@ -1,4 +1,3 @@
-// Стежим за даними які не впливають на процес гри
 export default class Game{
   constructor({ world, view, levels }){
     this.world = world;
@@ -23,8 +22,7 @@ export default class Game{
         case 'ArrowLeft':
         case 'Space':
         case 'Enter':
-          this.activeKeys.add(event.code);
-          
+          this.activeKeys.add(event.code);  
       }
       
       this.key = event.code;
@@ -33,7 +31,7 @@ export default class Game{
     document.addEventListener('keyup', event => {
       event.preventDefault();
       switch (event.code) {
-        case 'ArrowUp':
+          case 'ArrowUp':
           case 'ArrowRight':
           case 'ArrowDown':
           case 'ArrowLeft':
@@ -45,7 +43,6 @@ export default class Game{
 
       this.key = '';
     });
-
   }
 
   start() {
