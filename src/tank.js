@@ -6,7 +6,7 @@ export default class Tank {
   y = 192 * 3;
   width = 48;
   height = 48;
-  speed = 1;
+  speed = 3;
   animationFrame = 0;
   frames = [
     [0 * 48, 0 * 48, 48, 48],
