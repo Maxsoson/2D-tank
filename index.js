@@ -4,6 +4,7 @@ import Game from './src/game.js';
 import Sprite from './src/sprite.js';
 import levels from './data/levels.js';
 import spriteMap from './data/sprite-map.js';
+import Wall from './src/wall.js';
 
 const canvas = document.querySelector('canvas');
 const sprite = new Sprite('./assets/sprite.png', spriteMap);

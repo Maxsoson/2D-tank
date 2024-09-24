@@ -1,5 +1,5 @@
 export default class Game{
-  constructor({ world, view, levels }){
+  constructor({ world, view, levels }) {
     this.world = world;
     this.view = view;
     this.levels = levels;
@@ -14,7 +14,6 @@ export default class Game{
     this.world.setLevel(this.levels[this.level]);
 
     document.addEventListener('keydown', event => {
-      event.preventDefault();
       switch (event.code) {
         case 'ArrowUp':
         case 'ArrowRight':
@@ -22,6 +21,7 @@ export default class Game{
         case 'ArrowLeft':
         case 'Space':
         case 'Enter':
+          event.preventDefault();
           this.activeKeys.add(event.code);  
       }
       
@@ -29,7 +29,6 @@ export default class Game{
     });
 
     document.addEventListener('keyup', event => {
-      event.preventDefault();
       switch (event.code) {
           case 'ArrowUp':
           case 'ArrowRight':
@@ -37,8 +36,8 @@ export default class Game{
           case 'ArrowLeft':
           case 'Space':
           case 'Enter':
+            event.preventDefault();
             this.activeKeys.delete(event.code);
-          
       } 
 
       this.key = '';
@@ -52,7 +51,6 @@ export default class Game{
   loop() {
     this.world.update(this.activeKeys);
     this.view.update(this.world);
-    
 
     requestAnimationFrame(this.loop);
   }
