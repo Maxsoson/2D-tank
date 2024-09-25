@@ -1,70 +1,71 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Прибирає відступи з усіх елементів */
+    padding: 0; /* Прибирає поля з усіх елементів */
 }
 
 html,
 body {
-    overflow: hidden;
+    overflow: hidden; /* Запобігає прокрутці сторінки */
 }
 
 #canvas {
-    position: absolute;
-    background: #000;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    position: absolute; /* Встановлює абсолютне позиціонування для canvas */
+    background: #000; /* Встановлює чорний фон для canvas */
+    width: 100%; /* Задає ширину canvas 100% */
+    height: 100%; /* Задає висоту canvas 100% */
+    top: 0; /* Вирівнює canvas по верхній частині */
+    left: 0; /* Вирівнює canvas по лівій частині */
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    z-index: 1;
+    position: absolute; /* Встановлює абсолютне позиціонування для overlay */
+    top: 0; /* Вирівнює overlay по верхній частині */
+    left: 0; /* Вирівнює overlay по лівій частині */
+    width: 100%; /* Задає ширину overlay 100% */
+    height: 100%; /* Задає висоту overlay 100% */
+    background: rgba(0, 0, 0, 0.7); /* Встановлює напівпрозорий чорний фон для overlay */
+    display: flex; /* Використовує flexbox для вирівнювання елементів всередині overlay */
+    justify-content: center; /* Центрує елементи по горизонталі */
+    align-items: flex-start; /* Вирівнює елементи по верхній частині */
+    z-index: 1; /* Встановлює порядок накладення для overlay */
 }
 
 h1 {
-    color: #f3e245;
-    font-size: 80px;
+    color: #ffcc00; /* Встановлює жовтий колір для заголовка */
+    font-size: 80px; /* Встановлює розмір шрифту для заголовка */
     text-shadow: 
-        -1px -1px 0 white,  
-        1px -1px 0 white,
-        -1px 1px 0 white,
-        3px 3px 0 white;
-    font-family: 'Pixelify Sans', cursive;
-    margin-top: 20px;
+        -1px -1px 0 white,  /* Додає тінь до заголовка зліва та зверху */
+        1px -1px 0 white,   /* Додає тінь до заголовка справа та зверху */
+        -1px 1px 0 white,   /* Додає тінь до заголовка зліва та знизу */
+        3px 3px 0 white;    /* Додає тінь до заголовка праворуч та знизу */
+    font-family: 'Pixelify Sans', cursive; /* Встановлює шрифт для заголовка */
+    margin-top: 20px; /* Встановлює верхній відступ для заголовка */
 }
 
 .button-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -35%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    position: absolute; /* Встановлює абсолютне позиціонування для контейнера кнопок */
+    top: 50%; /* Вирівнює контейнер по вертикалі (середина) */
+    left: 50%; /* Вирівнює контейнер по горизонталі (середина) */
+    transform: translate(-50%, -35%); /* Зсуває контейнер на 50% вліво та 35% вгору */
+    display: flex; /* Використовує flexbox для вирівнювання кнопок всередині контейнера */
+    flex-direction: column; /* Встановлює напрямок елементів у стовпчик */
+    gap: 15px; /* Додає відстань між кнопками */
 }
 
 .pixel-button {
-    background-color: #f3e245;
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    font-family: 'Pixelify Sans', cursive;
-    font-size: 37px;
-    padding: 20px 33px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #ffcc00; /* Встановлює жовтий фон для кнопки */
+    color: #333; /* Встановлює темно-сірий колір тексту кнопки */
+    border: 2px solid #fff; /* Додає білу рамку до кнопки */
+    border-radius: 5px; /* Закруглює кути кнопки */
+    font-family: 'Pixelify Sans', cursive; /* Встановлює шрифт для кнопки */
+    font-size: 37px; /* Встановлює розмір шрифту для тексту кнопки */
+    padding: 20px 33px; /* Додає внутрішні відступи до кнопки */
+    cursor: pointer; /* Змінює вигляд курсора на вказівник при наведенні */
+    transition: background-color 0.3s, color 0.3s; /* Додає анімацію до зміни кольору фону та тексту */
+    text-decoration: none; /* Прибирає підкреслення з тексту кнопки */
 }
 
 .pixel-button:hover {
-    background-color: #666;
-    color: #ffeb3b;
+    background-color: #ffc107; /* Світліший жовтий колір фону при наведенні */
+    color: #fff; /* Білий колір тексту кнопки при наведенні */
 }

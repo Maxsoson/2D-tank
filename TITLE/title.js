@@ -1,4 +1,4 @@
-import { Column } from "./column.js";
+import { Column } from "/TITLE/column.js";
 
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
@@ -9,7 +9,7 @@ canvas.height = window.innerHeight;
 const FONT_SIZE = 44;
 
 const image = new Image();
-image.src = "skin2.png"; 
+image.src = "/TITLE/skin2.png"; 
 
 const columns = [];
 const columnsCount = canvas.width / FONT_SIZE;
