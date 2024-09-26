@@ -1,3 +1,5 @@
+import { NUMBER_OF_UNITS, UNIT_SIZE, TILE_SIZE } from './constants.js';
+
 export default class View {
   constructor(canvas, sprite) {
     this.canvas = canvas;
@@ -11,45 +13,47 @@ export default class View {
 
   update(world) {
     this.clearScreen();
-    this.renderLevel(world.level);
-    this.renderPlayer1Tank(world.player1Tank);
+    this.renderObjects(world.object);
+    this.renderGrid();
   }
 
-  renderLevel(level) {
-    for (let i = 0; i < level.length; i++) {
-      for (let j = 0; j < level[i].length; j++) {  
-        const block = level[i][j];
-        
-        if (block) {
-          const [x, y, width, height] = this.sprite.get(block.sprite);
-      
-          this.context.drawImage(
-            this.sprite.image,
-            x, y, width, height,
-            block.x, block.y, width, height
-          );
+  renderObjects(objects) {
+    for (const object of objects) { 
+      const { x, y, width, height, sprites } = object;
 
-          if (block.debug) {
-            this.context.strokeStyle = '#ffffff';
-            this.context.lineWidth = 1;
-            this.context.strokeRect(block.x + 1, block.y + 1, block.width - 2, block.height - 2);
-            block.debug = false;
-          }
-        }
+      this.context.drawImage(
+        this.sprite.image,
+        ...sprite,
+        x, y, width, height
+      );
+
+      if (object.debug) {
+        this.context.strokeStyle = '#ff0000';
+        this.context.lineWidth = 2;
+        this.context.strokeRect( x + 1, y + 1, width - 2, height - 2 );
+        object.debug = false;
       }
     }
   }
 
-  renderPlayer1Tank(player1Tank) {
-    const [x, y, width, height] = player1Tank.sprite;
+  renderGrid() {
+    for (let y = 0; y < NUMBER_OF_UNITS; y++) {
+      for (let x = 0; x <NUMBER_OF_UNITS; x++) {
+        this.context.strokeStyle = '#ffffff';
+        this.context.lineWidth = .2;
+        this.context.strokeRect(x * UNIT_SIZE + 1, y * UNIT_SIZE + 1, UNIT_SIZE - 2, UNIT_SIZE - 2);
+      }
+    }
 
-    this.context.drawImage(
-      this.sprite.image,
-      x, y, width, height,
-      player1Tank.x, player1Tank.y, width, height
-    );
+    for (let y = 0; y < NUMBER_OF_UNITS * 2; y++) {
+      for (let x = 0; x < NUMBER_OF_UNITS * 2; x++) {
+        this.context.strokeStyle = '#ffffff';
+        this.context.lineWidth = .1;
+        this.context.strokeRect(x * UNIT_SIZE + 1, y * UNIT_SIZE + 1, UNIT_SIZE - 2, UNIT_SIZE - 2);
+      }
+    }
   }
-
+  
   clearScreen() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
