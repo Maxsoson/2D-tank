@@ -1,5 +1,5 @@
 import { Direction, Keys, TILE_SIZE, TANK_TURN_THRESHOLD } from './constants.js';
-import { getDirectionForKeys, getAxisFroDirection, getValueForDirection } from './utils.js';
+import { getDirectionForKeys, getAxisForDirection, getValueForDirection } from './utils.js';
 import GameObject from './game-object.js';
 
 export default class Tank extends GameObject {
@@ -64,7 +64,7 @@ export default class Tank extends GameObject {
   }
 
   _move(world, direction) {
-    const axis = getAxisFroDirection(direction);
+    const axis = getAxisForDirection(direction);
     const value = getValueForDirection(direction);
     const delta = value * this.speed;
 

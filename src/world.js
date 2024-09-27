@@ -59,7 +59,7 @@ export default class World {
   }
 
   update(activeKeys) {
-    this.player1Tank.update(this. activeKeys);
+    this.player1Tank.update(this.activeKeys);
   }
 
   isOutOfBounds(object) {

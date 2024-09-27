@@ -1,19 +1,19 @@
-import { Direction } from "./constants";
+import { Direction } from "./constants.js";
 
 export function getDirectionForKeys(keys) {
-    if (keys.has('ArrouUp')) {
+    if (keys.has('ArrowUp')) {
         return Direction.UP;
     }
 
-    if (keys.has('ArrouRight')) {
+    if (keys.has('ArrowRight')) {
         return Direction.RIGHT;
     }
 
-    if (keys.has('ArrouDown')) {
+    if (keys.has('ArrowDown')) {
         return Direction.DOWN;
     }
 
-    if (keys.has('ArrouLeft')) {
+    if (keys.has('ArrowLeft')) {
         return Direction.LEFT;
     }
 }
@@ -25,8 +25,8 @@ export function getAxisForDirection(direction) {
 export function getValueForDirection(direction) {
     switch (direction) {
         case Direction.UP: return -1;
-        case Direction.RIGHT: return -1;
-        case Direction.DOWN: return -1;
+        case Direction.RIGHT: return 1;
+        case Direction.DOWN: return 1;
         case Direction.LEFT: return -1;
     }
 }
