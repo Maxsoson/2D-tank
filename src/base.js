@@ -8,6 +8,6 @@ export default class Base extends GameObject {
     }
 
     get sprite() {
-        return this.sprite[Number(this.destroyed)];
+        return this.sprites[Number(this.destroyed)];
     }
 }

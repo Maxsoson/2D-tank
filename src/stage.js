@@ -6,12 +6,12 @@ export default class Stage {
         switch (args.type) {
             case constants.ObjectType.BRICK_WALL: return new Wall({
                 ...args,
-                sprite: constants.BRICK_WALL_SPRITES
+                sprites: constants.BRICK_WALL_SPRITES
             });
 
             case constants.ObjectType.STEEL_WALL: return new Wall({
                 ...args,
-                sprite: constants.STEEL_WALL_SPRITES
+                sprites: constants.STEEL_WALL_SPRITES
             });
         }
     }

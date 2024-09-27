@@ -13,13 +13,13 @@ export default class View {
 
   update(world) {
     this.clearScreen();
-    this.renderObjects(world.object);
+    this.renderObjects(world.objects);
     this.renderGrid();
   }
 
   renderObjects(objects) {
     for (const object of objects) { 
-      const { x, y, width, height, sprites } = object;
+      const { x, y, width, height, sprite } = object;
 
       this.context.drawImage(
         this.sprite.image,
@@ -36,7 +36,7 @@ export default class View {
     }
   }
 
-  renderGrid() {
+  renderGrid() { //сітка поля
     for (let y = 0; y < NUMBER_OF_UNITS; y++) {
       for (let x = 0; x <NUMBER_OF_UNITS; x++) {
         this.context.strokeStyle = '#ffffff';
@@ -49,7 +49,7 @@ export default class View {
       for (let x = 0; x < NUMBER_OF_UNITS * 2; x++) {
         this.context.strokeStyle = '#ffffff';
         this.context.lineWidth = .1;
-        this.context.strokeRect(x * UNIT_SIZE + 1, y * UNIT_SIZE + 1, UNIT_SIZE - 2, UNIT_SIZE - 2);
+        this.context.strokeRect(x * TILE_SIZE + 1, y * TILE_SIZE + 1, TILE_SIZE - 2, TILE_SIZE - 2);
       }
     }
   }

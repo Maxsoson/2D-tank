@@ -59,7 +59,7 @@ export default class World {
   }
 
   update(activeKeys) {
-    this.player1Tank.update(this.activeKeys);
+    this.player1Tank.update(this, activeKeys);
   }
 
   isOutOfBounds(object) {
@@ -81,7 +81,7 @@ export default class World {
     const collisionObject = this._getCollisionObject(object);
 
     if (collisionObject) {
-      collisionObject.debug = thru;
+      collisionObject.debug = true;
 
       return { object: collisionObject };
     }
@@ -95,9 +95,9 @@ export default class World {
   _haveCollision(a, b) {
     return (
       a.left < b.right &&
-      a.right < b.left &&
+      a.right > b.left &&
       a.top < b.bottom &&
-      a.bottom < b.top 
+      a.bottom > b.top 
     );
   }
 }

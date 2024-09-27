@@ -11,7 +11,7 @@ export default class Tank extends GameObject {
   }
 
   get sprite() {
-    return this.frames[this.direction * 2 + this.animationFrame];
+    return this.sprites[this.direction * 2 + this.animationFrame];
   }
 
   update(world, activeKeys) {
@@ -71,7 +71,7 @@ export default class Tank extends GameObject {
     this.animationFrame ^= 1;
     this[axis] += delta;
 
-    const isOutOfBounds = world.isOutOfBoun(this);
+    const isOutOfBounds = world.isOutOfBounds(this);
     const hasCollision = world.hasCollision(this);
 
     if (isOutOfBounds || hasCollision) {
