@@ -4,6 +4,7 @@ export default class View {
   constructor(canvas, sprite) {
     this.canvas = canvas;
     this.context = canvas.getContext('2d');
+    this.context.imageSmoothingEnabled = false;
     this.sprite = sprite;
   }
 
@@ -11,34 +12,36 @@ export default class View {
     await this.sprite.load();
   }
 
-  update(world) {
+  update(stage) {
     this.clearScreen();
-    this.renderObjects(world.objects);
-    this.renderGrid();
+    this.renderStage(stage);
+    this.renderGrid();//
   }
 
-  renderObjects(objects) {
-    for (const object of objects) { 
+  renderStage(stage) {
+    for (const object of stage.objects) {
       const { x, y, width, height, sprite } = object;
 
+      if (!sprite) return;
+
       this.context.drawImage(
-        this.sprite.image,
-        ...sprite,
-        x, y, width, height
-      );
+          this.sprite.image,
+          ...sprite,
+          x, y, width, height
+        );
 
       if (object.debug) {
         this.context.strokeStyle = '#ff0000';
         this.context.lineWidth = 2;
-        this.context.strokeRect( x + 1, y + 1, width - 2, height - 2 );
+        this.context.strokeRect(x + 1, y + 1, width - 2, height - 2);
         object.debug = false;
       }
     }
   }
 
-  renderGrid() { //сітка поля
+  renderGrid() {
     for (let y = 0; y < NUMBER_OF_UNITS; y++) {
-      for (let x = 0; x <NUMBER_OF_UNITS; x++) {
+      for (let x = 0; x < NUMBER_OF_UNITS; x++) {
         this.context.strokeStyle = '#ffffff';
         this.context.lineWidth = .2;
         this.context.strokeRect(x * UNIT_SIZE + 1, y * UNIT_SIZE + 1, UNIT_SIZE - 2, UNIT_SIZE - 2);
@@ -53,7 +56,7 @@ export default class View {
       }
     }
   }
-  
+
   clearScreen() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
