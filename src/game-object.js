@@ -35,4 +35,8 @@ export default class GameObject {
     update() {
 
     }
+
+    hit() {
+        
+    }
 }

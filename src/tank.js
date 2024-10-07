@@ -71,8 +71,6 @@ export default class Tank extends GameObject {
     });
 
       this.bullet = bullet;
-
-      return bullet;
     }
   }
 
@@ -81,9 +79,9 @@ export default class Tank extends GameObject {
 
         if (this.frames > 20) {
           this.animationFrame ^= 1;
-          this.frames = 0;        }
+          this.frames = 0;        
+        }
       }
-
 
   _getBulletStartingPosition() {
     switch (this.direction) {

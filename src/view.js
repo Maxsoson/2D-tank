@@ -15,7 +15,7 @@ export default class View {
   update(stage) {
     this.clearScreen();
     this.renderStage(stage);
-    this.renderGrid();//
+    //this.renderGrid();//
   }
 
   renderStage(stage) {

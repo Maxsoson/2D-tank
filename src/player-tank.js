@@ -32,10 +32,11 @@ export default class PlayerTank extends Tank {
         }
 
         if (input.keys.has(Keys.SPACE)) {
-            const bullet = this._fire();
+            this._fire();
 
-            if (bullet) {
-                world.objects.add(bullet);
+            if (this.bullet) {
+                world.objects.add(this.bullet);
+                
             }
         }
     }
