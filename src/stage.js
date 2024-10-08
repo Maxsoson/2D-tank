@@ -1,9 +1,9 @@
-import { STAGE_SIZE, TILE_SIZE } from '/src/constants.js';
-import Base from '/src/base.js';
-import BrickWall from '/src/brick-wall.js';
-import SteelWall from '/src/steel-wall.js';
-import PlayerTank from '/src/player-tank.js';
-import EnemyTank from '/src/enemy-tank.js';
+import { STAGE_SIZE, TILE_SIZE } from './constants.js';
+import Base from './base.js';
+import BrickWall from './brick-wall.js';
+import SteelWall from './steel-wall.js';
+import PlayerTank from './player-tank.js';
+import EnemyTank from './enemy-tank.js';
 
 export default class Stage {
     static TerrainType = {

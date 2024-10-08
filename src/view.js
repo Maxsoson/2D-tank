@@ -1,4 +1,4 @@
-import { NUMBER_OF_UNITS, UNIT_SIZE, TILE_SIZE } from '/src/constants.js';
+import { NUMBER_OF_UNITS, UNIT_SIZE, TILE_SIZE } from './constants.js';
 
 export default class View {
   constructor(canvas, sprite) {

@@ -1,5 +1,5 @@
-import Player from '/src/player.js';
-import Stage from '/src/stage.js';
+import Player from './player.js';
+import Stage from './stage.js';
 
 export default class Game {
   constructor({ input, view, stages }) {

@@ -1,5 +1,5 @@
-import { Direction, BRICK_WALL_SPRITES } from '/src/constants.js';
-import Wall from '/src/wall.js';
+import { Direction, BRICK_WALL_SPRITES } from './constants.js';
+import Wall from './wall.js';
 
 export default class BrickWall extends Wall {
     constructor(args) {

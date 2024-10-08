@@ -1,6 +1,6 @@
-import { Keys, PLAYER1_TANK_POSITION, PLAYER1_TANK_SPRITES, TANK_SPEED } from '/src/constants.js';
-import { getDirectionForKeys, getAxisForDirection, getValueForDirection } from '/src/utils.js';
-import Tank from '/src/tank.js';
+import { Keys, PLAYER1_TANK_POSITION, PLAYER1_TANK_SPRITES, TANK_SPEED } from './constants.js';
+import { getDirectionForKeys, getAxisForDirection, getValueForDirection } from './utils.js';
+import Tank from './tank.js';
 
 export default class PlayerTank extends Tank {
     constructor(args) {

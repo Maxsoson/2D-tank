@@ -1,5 +1,5 @@
-import { BULLET_EXPLOSION_WIDTH, BULLET_EXPLOSION_HEIGHT, BULLET_EXPLOSION_SPEED, BULLET_EXPLOSION_SPRITES } from '/src/constants.js';
-import GameObject from '/src/game-object.js';
+import { BULLET_EXPLOSION_WIDTH, BULLET_EXPLOSION_HEIGHT, BULLET_EXPLOSION_SPEED, BULLET_EXPLOSION_SPRITES } from './constants.js';
+import GameObject from './game-object.js';
 
 export default class Explosion extends GameObject {
     constructor(args) {

@@ -1,7 +1,7 @@
-import { BULLET_WIDTH, BULLET_HEIGHT, BULLET_SPRITES } from '/src/constants.js';
-import GameObject from '/src/game-object.js';
-import { getAxisForDirection, getValueForDirection } from '/src/utils.js';
-import Explosion from '/src/explosion.js';
+import { BULLET_WIDTH, BULLET_HEIGHT, BULLET_SPRITES } from './constants.js';
+import GameObject from './game-object.js';
+import { getAxisForDirection, getValueForDirection } from './utils.js';
+import Explosion from './explosion.js';
 
 export default class Bullet extends GameObject {
     constructor({ tank, direction, speed, ...args }) {

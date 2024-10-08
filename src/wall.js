@@ -1,6 +1,6 @@
-import { TILE_SIZE } from '/src/constants.js';
+import { TILE_SIZE } from './constants.js';
 
-import GameObject from '/src/game-object.js';
+import GameObject from './game-object.js';
 
 export default class Wall extends GameObject {
     constructor({ type, ...rest }) {

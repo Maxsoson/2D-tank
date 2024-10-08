@@ -1,7 +1,7 @@
-import { TILE_SIZE, TANK_WIDTH, TANK_HEIGHT, TANK_SPEED, TANK_TURN_THRESHOLD } from '/src/constants.js';
-import { getAxisForDirection } from '/src/utils.js';
-import GameObject from '/src/game-object.js';
-import Bullet from '/src/bullet.js';
+import { TILE_SIZE, TANK_WIDTH, TANK_HEIGHT, TANK_SPEED, TANK_TURN_THRESHOLD } from './constants.js';
+import { getAxisForDirection } from './utils.js';
+import GameObject from './game-object.js';
+import Bullet from './bullet.js';
 
 export default class Tank extends GameObject {
   constructor(args) {
