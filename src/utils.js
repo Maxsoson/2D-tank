@@ -1,4 +1,4 @@
-import { Direction } from "./constants.js";
+import { Direction } from "/src/constants.js";
 
 export function getDirectionForKeys(keys) {
     if (keys.has('ArrowUp')) {
