@@ -1,0 +1,113 @@
+body {
+    background-image: url('/photo/1.png'); 
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif; /* Застосування шрифту Montserrat до основного тексту */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.signup-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    width: 480px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Lobster', cursive; /* Застосування шрифту Lobster для заголовка */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 95%; 
+    padding: 8px; 
+    margin: 7.5px 0;
+    border: none;
+    border-radius: 7.5px;
+    height: 45px; /* Встановлення висоти полів */
+    font-family: 'Quicksand', sans-serif; /* Застосування шрифту Quicksand для полів введення */
+    font-size: 16px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 7.5px;   
+    font-size: 21px;
+    color: #ccc;
+}
+
+.signup-btn {
+    background-color: gray;
+    color: black;
+    padding: 15px;
+    border: none;
+    border-radius: 7.5px;
+    cursor: not-allowed;
+    width: 95%; /* Встановлюємо таку ж ширину, як у полів введення */
+    margin-top: 15px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    height: 45px; /* Встановлюємо однакову висоту для кнопки */
+}
+
+.signup-btn.active {
+    background-color: limegreen;
+    cursor: pointer;
+}
+
+.signup-btn.active:hover {
+    background-color: green;
+}
+
+.gender-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.gender-selection label {
+    width: 47%; 
+    cursor: pointer;
+    height: 45px; /* Встановлюємо висоту для label, щоб вона відповідала кнопкам */
+}
+
+.gender-selection input[type="radio"] {
+    display: none; 
+}
+
+.gender-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 7.5px;
+    padding: 0; /* Прибираємо padding, щоб кнопки відповідали висоті */
+    text-align: center;
+    color: white;
+    font-size: 21px;
+    height: 45px; /* Встановлюємо однакову висоту для кнопок */
+    width: 100%; 
+    font-family: 'Quicksand', sans-serif;
+}
+
+.gender-selection input[type="radio"]:checked[value="female"] + .gender-btn {
+    background-color: pink;
+}
+
+.gender-selection input[type="radio"]:checked[value="male"] + .gender-btn {
+    background-color: lightblue;
+}
+
+.privacy-text {
+    font-size: 18px;
+    color: #ccc;
+    margin-top: 22.5px;
+    font-family: 'Montserrat', sans-serif;
+}

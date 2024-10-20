@@ -1,0 +1,74 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif; /* Застосування шрифту Montserrat */
+}
+
+.background {
+    background-image: url('/photo/back.png'); /* Фонове зображення */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Висота на весь екран */
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    width: 480px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+h1 {
+    font-family: 'Lobster', cursive; /* Шрифт Lobster для заголовку */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Стилі для полів вводу */
+input[type="text"], input[type="password"] {
+    width: 95%; 
+    padding: 12px; 
+    margin: 8px 0;
+    border: none;
+    border-radius: 7.5px;
+    font-family: 'Quicksand', sans-serif; /* Шрифт Quicksand для полів */
+    font-size: 16px;
+    height: 45px; /* Висота полів вводу */
+}
+
+button {
+    width: 100%; /* Збільшено ширину до 100% */
+    padding: 18px; /* Збільшено padding */
+    background-color: gray;
+    border: none;
+    border-radius: 7.5px;
+    color: black;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px; /* Збільшено розмір шрифту */
+    height: 55px; /* Збільшено висоту кнопки */
+    margin-top: 20px; /* Додаємо відступ зверху для опускання кнопки */
+}
+
+button:hover {
+    background-color: limegreen; /* Ефект наведення */
+}
+
+.signup-link {
+    display: block;
+    margin-top: 20px;
+    color: #007bff; /* Синій колір для посилання */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}

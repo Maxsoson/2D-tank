@@ -5,26 +5,25 @@ export default class Explosion extends GameObject {
     constructor(args) {
         super(args);
 
+        this.type = 'explosion';
         this.width = BULLET_EXPLOSION_WIDTH;
         this.height = BULLET_EXPLOSION_HEIGHT;
         this.speed = BULLET_EXPLOSION_SPEED;
         this.sprites = BULLET_EXPLOSION_SPRITES;
-        this.exploded = false;
+        this.isDestroyed = false;
     }
 
     get sprite() {
         return this.sprites[this.animationFrame];
     }
 
-    update({ frameDelta }) {
-        if (!this.exploded) {
-        if (this.animationFrame === 3) {
-        this.exploded = true;
+    update({ world, frameDelta }) {
+        if (this.animationFrame < 3) {
+            this._animate(frameDelta);
         } else {
-        this._animate(frameDelta); 
+            this._destroy(world);
         } 
     }
-}
 
     _animate(frameDelta){
         this.frames += frameDelta;
@@ -33,5 +32,10 @@ export default class Explosion extends GameObject {
             this.animationFrame = (this.animationFrame + 1) % 4;
             this.frames = 0;
         }
+    }
+
+    _destroy(world) {
+        this.isDestroyed = true;
+        world.objects.delete(this);
     }
 }

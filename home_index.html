@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Pixel Tanks: Battlefront</title>
+</head>
+<body>
+    <header>
+        <h1>Pixel Tanks: Battlefront</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="News.html" class="menu-btn">📰 News</a></li>
+            <li><a href="Progress-log.html" class="menu-btn">📜 Progress Log</a></li>
+            <li><a href="log_in.html" class="menu-btn">🚶‍♂️ Log In</a></li>
+            <li><a href="sign_up.html" class="menu-btn">🔑 Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <div class="images-container">
+        <button class="arrow left-arrow" onclick="changeImage(-1)">◀</button>
+        <div class="image-container">
+            <img id="game-image1" src="photo/test1.png" alt="Game Image 1" class="game-image" onclick="openImage(0)" />
+            <img id="game-image2" src="photo/test2.png" alt="Game Image 2" class="game-image" onclick="openImage(1)" />
+            <img id="game-image3" src="photo/test3.png" alt="Game Image 3" class="game-image" onclick="openImage(2)" />
+        </div>
+        <button class="arrow right-arrow" onclick="changeImage(1)">▶</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pixel Tanks: Battlefront. Made by Maksim Martynenko and Maksim Usanin.</p>
+    </footer>
+    
+    <script>
+        const images = ["photo/test1.png", "photo/test2.png", "photo/test3.png", "photo/test4.png"];
+        let currentIndex = 0;
+        let modalImageIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            for (let i = 0; i < 3; i++) {
+                document.getElementById(`game-image${i + 1}`).src = images[(currentIndex + i) % images.length];
+            }
+        }
+    
+        function openImage(index) {
+            modalImageIndex = (currentIndex + index) % images.length;
+            const modal = document.getElementById("modal");
+            const modalImage = document.getElementById("modalImage");
+            modalImage.src = images[modalImageIndex];
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+
+        window.onload = function() {
+            const modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

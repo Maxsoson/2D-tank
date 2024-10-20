@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/sign_up.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/js/sign_up.js" defer></script>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up and Start Fun :></h2>
+        <form id="signup-form" method="POST" action="/sign_in">
+            <!-- Username field -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required placeholder="Don't use real name">
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required placeholder="Email">
+
+            <!-- Password field -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="At least 6 characters">
+
+            <!-- Gender selection buttons -->
+            <div class="gender-selection">
+                <label>
+                    <input type="radio" name="gender" value="female" required>
+                    <div class="gender-btn female-btn">♀ Female ♀</div>
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="male" required>
+                    <div class="gender-btn male-btn">♂ Male ♂</div>
+                </label>
+            </div>
+            
+            <button type="submit" class="signup-btn" id="signup-btn">Sign Up</button>
+        </form>
+
+        <p class="privacy-text">
+            By clicking Sign Up, you are agreeing to the Terms of Use and Privacy Policy.
+        </p>
+    </div>
+</body>
+</html>
